@@ -3,10 +3,14 @@ import json
 import os
 
 
-def open_csv_file(csv_path):
+def open_csv_file_to_get_data(csv_path):
+
     with open(csv_path, encoding='utf-8') as csv_file:
         csv_reader = csv.DictReader(csv_file)
-        return csv_reader
+
+        data = convert_rows_to_dictionary(csv_reader)
+
+    return data
 
 
 def convert_rows_to_dictionary(csv_reader):
@@ -33,12 +37,12 @@ def create_folder(dir_name):
 
 def main():
     csv_path = r'MadaReports - MadaReports.csv'
-    json_path = r'mada_reports'
-    json_file = f'{json_path}/mada_report1'
+    json_path = r'mada_reports_jsons'
+    json_file = f'{json_path}/mada_report1.json'
+    csv_path = r'C:\Users\storm\PycharmProjects\myProjects\MadaReportss\MadaReports - MadaReports.csv'
 
     create_folder(json_path)
-    csv_reader = open_csv_file(csv_path)
-    data = convert_rows_to_dictionary(csv_reader)
+    data = open_csv_file(csv_path)
     write_to_json(json_file, data)
 
 
