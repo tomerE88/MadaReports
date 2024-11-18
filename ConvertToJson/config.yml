@@ -12,6 +12,11 @@ json:
 files:
   read: 'r'
   write: 'w'
+  next_file: 1
+  first_file: 1
 
 rows:
-  max: 100
+  max: 50000
+  first: 0
+  next_row: 1
+  first_row: 0
