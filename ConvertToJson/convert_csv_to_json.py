@@ -33,7 +33,7 @@ def create_folder(dir_name):
 
 def main():
     csv_path = r'MadaReports - MadaReports.csv'
-    json_path = ''
+    json_path = r'mada_reports'
 
     csv_reader = open_csv_file(csv_path)
     data = convert_rows_to_dictionary(csv_reader)
