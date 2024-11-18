@@ -44,13 +44,11 @@ def create_folder(dir_name):
 
 
 def main():
-    json_path = r'mada_reports_jsons'
-    json_file = f'{json_path}/mada_report1.json'
     csv_path = r'C:\Users\storm\PycharmProjects\myProjects\MadaReportss\MadaReports - MadaReports.csv'
 
-    create_folder(json_path)
+    create_folder(configuration_variables['json']['path']['folder'])
     data = open_csv_file_to_get_data(csv_path)
-    write_to_json(json_file, data)
+    write_to_json(configuration_variables['json']['path']['file'], data)
 
 
 if __name__ == '__main__':

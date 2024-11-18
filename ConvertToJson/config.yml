@@ -5,6 +5,9 @@ encode:
 json:
   key: "IDNum"
   space_between_rows: 4
+  path:
+    folder: "mada_reports_jsons"
+    file: "mada_reports_jsons/mada_report1.json"
 
 files:
   read: 'r'
