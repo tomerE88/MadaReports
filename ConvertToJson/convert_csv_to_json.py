@@ -15,3 +15,8 @@ def convert_rows_to_dictionary(csv_reader):
         data[key] = row
 
     return data
+
+
+def write_to_json(json_path, data):
+    with open(json_path, 'w', encoding='utf-8') as json_file:
+        json_file.write(json.dumps(data, indent=4))
