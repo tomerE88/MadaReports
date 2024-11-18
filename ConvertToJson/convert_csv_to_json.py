@@ -18,8 +18,10 @@ def open_csv_file_to_get_data(csv_path):
 
 def convert_rows_to_dictionary(csv_reader):
     data = {}
+    counter = 0
     for row in csv_reader:
-        key = row[configuration_variables['json']['key']]
+        key = counter
+        counter += 1
         data[key] = row
 
     return data
@@ -34,10 +36,19 @@ def check_maximum_rows(data):
     return True if num_rows <= configuration_variables['rows']['max'] else False
 
 
-def write_to_json(json_path, data):
+def write_to_json(json_path, data, index):
     with open(json_path, configuration_variables['files']['write'],
               encoding=configuration_variables['encode']['eight_bit']) as json_file:
-        json_file.write(json.dumps(data, indent=configuration_variables['json']['space_between_rows']))
+        if index == configuration_variables['rows']['max']:
+            return
+        if index < configuration_variables['rows']['max']:
+            small_index = index
+            index = configuration_variables['rows']['max']
+        else:
+            small_index = index - configuration_variables['rows']['max']
+        for i in range(small_index, index):
+            print(i)
+            json_file.write(json.dumps(data[i], indent=configuration_variables['json']['space_between_rows']))
 
 
 def create_folder(dir_name):
@@ -53,7 +64,14 @@ def main():
 
     create_folder(configuration_variables['json']['path']['folder'])
     data = open_csv_file_to_get_data(csv_path)
-    write_to_json(configuration_variables['json']['path']['file'], data)
+    if check_maximum_rows(data):
+        write_to_json(configuration_variables['json']['path']['file'], data, 0)
+    else:
+        for index in range(0, count_data_rows(data), configuration_variables['rows']['max']):
+            write_to_json(configuration_variables['json']['path']['file'], data, index)
+
+        write_to_json(configuration_variables['json']['path']['file'], data,
+                      count_data_rows(data) - configuration_variables['rows']['max'])
 
 
 if __name__ == '__main__':
