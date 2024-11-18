@@ -1,5 +1,6 @@
 import csv
 import json
+import os
 
 
 def open_csv_file(csv_path):
@@ -20,6 +21,14 @@ def convert_rows_to_dictionary(csv_reader):
 def write_to_json(json_path, data):
     with open(json_path, 'w', encoding='utf-8') as json_file:
         json_file.write(json.dumps(data, indent=4))
+
+
+def create_folder(dir_name):
+    try:
+        os.mkdir(dir_name)
+        print(f"Directory '{dir_name}' created successfully.")
+    except FileExistsError:
+        print(f"Directory '{dir_name}' already exists.")
 
 
 def main():
