@@ -25,6 +25,10 @@ def convert_rows_to_dictionary(csv_reader):
     return data
 
 
+def count_data_rows(data):
+    return len(data)
+
+
 def write_to_json(json_path, data):
     with open(json_path, configuration_variables['files']['write'],
               encoding=configuration_variables['encode']['eight_bit']) as json_file:
