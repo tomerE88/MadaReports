@@ -1,4 +1,5 @@
-#CSV_PATH: "C:\Users\storm\PycharmProjects\myProjects\MadaReportss\MadaReports - MadaReports.csv"
+csv:
+  path: "C:\\Users\\storm\\PycharmProjects\\myProjects\\MadaReportss\\MadaReports - MadaReports.csv"
 encode:
   eight_bit: "utf-8"
 
