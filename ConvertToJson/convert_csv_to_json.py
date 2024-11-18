@@ -1,6 +1,7 @@
 import csv
 import json
 import os
+import yaml
 
 
 def open_csv_file_to_get_data(csv_path):
@@ -42,7 +43,7 @@ def main():
     csv_path = r'C:\Users\storm\PycharmProjects\myProjects\MadaReportss\MadaReports - MadaReports.csv'
 
     create_folder(json_path)
-    data = open_csv_file(csv_path)
+    data = open_csv_file_to_get_data(csv_path)
     write_to_json(json_file, data)
 
 
