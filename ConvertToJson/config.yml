@@ -1,1 +1,11 @@
-CSV_PATH: "C:\Users\storm\PycharmProjects\myProjects\MadaReportss\MadaReports - MadaReports.csv"
+#CSV_PATH: "C:\Users\storm\PycharmProjects\myProjects\MadaReportss\MadaReports - MadaReports.csv"
+encode:
+  eight_bit: "utf-8"
+
+json:
+  key: "IDNum"
+  space_between_rows: 4
+
+files:
+  read: 'r'
+  write: 'w'
