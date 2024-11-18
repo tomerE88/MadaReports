@@ -12,3 +12,6 @@ json:
 files:
   read: 'r'
   write: 'w'
+
+rows:
+  max: 50000

@@ -29,6 +29,11 @@ def count_data_rows(data):
     return len(data)
 
 
+def check_maximum_rows(data):
+    num_rows = count_data_rows(data)
+    return True if num_rows <= configuration_variables['rows']['max'] else False
+
+
 def write_to_json(json_path, data):
     with open(json_path, configuration_variables['files']['write'],
               encoding=configuration_variables['encode']['eight_bit']) as json_file:
