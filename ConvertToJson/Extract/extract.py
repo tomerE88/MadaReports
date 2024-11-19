@@ -1,8 +1,8 @@
 import csv
 import yaml
-import ConvertToJson.Transform.transform as transform
+import Transform.transform as transform
 
-config_file = open('config.yml', 'r')
+config_file = open('ConvertToJson/config.yml', 'r')
 configuration_variables = yaml.safe_load(config_file)
 
 

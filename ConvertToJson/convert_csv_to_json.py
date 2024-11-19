@@ -4,7 +4,7 @@ import yaml
 from Extract import extract
 import Load.load as load
 
-config_file = open('config.yml', 'r')
+config_file = open('ConvertToJson/config.yml', 'r')
 configuration_variables = yaml.safe_load(config_file)
 
 
@@ -21,6 +21,7 @@ def main():
 
     data = extract.open_csv_file_to_get_data(configuration_variables['csv']['path'])
     load.create_report_files(data)
+    print(os.getcwd())
 
 
 if __name__ == '__main__':
