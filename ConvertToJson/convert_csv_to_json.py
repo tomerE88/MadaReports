@@ -18,7 +18,8 @@ def create_folder(dir_name):
 
 def main():
     create_folder(configuration_variables['json']['path']['folder'])
-    csv_file = input("Enter csv file path: ")
+    # csv_file = input("Enter csv file path: ")
+    csv_file = configuration_variables['csv']['path']
 
     data = extract.open_csv_file_to_get_data(csv_file)
     load.create_report_files(data)
