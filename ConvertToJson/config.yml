@@ -7,8 +7,8 @@ json:
   key: "IDNum"
   space_between_rows: 4
   path:
-    folder: "mada_reports_jsons"
-    file: "mada_reports_jsons/mada_report"
+    folder: "mada_reports"
+    file: "mada_reports/mada_report"
 
 files:
   read: 'r'
