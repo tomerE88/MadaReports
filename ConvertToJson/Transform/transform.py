@@ -14,7 +14,3 @@ def convert_rows_to_dictionary(csv_reader):
         data[key] = row
 
     return data
-
-
-def dump_data(data):
-    return json.dump(json.dumps(data, indent=configuration_variables['json']['space_between_rows']))
