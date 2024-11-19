@@ -8,15 +8,6 @@ config_file = open('config.yml', 'r')
 configuration_variables = yaml.safe_load(config_file)
 
 
-def count_data_rows(data):
-    return len(data)
-
-
-def check_maximum_rows(data):
-    num_rows = count_data_rows(data)
-    return True if num_rows <= configuration_variables['rows']['max'] else False
-
-
 def create_folder(dir_name):
     if not os.path.exists(dir_name):
         os.mkdir(dir_name)
